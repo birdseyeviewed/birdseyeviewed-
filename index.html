@@ -6,9 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Birds Eye View</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
 
+<style>
 * {
   box-sizing: border-box;
 }
@@ -17,60 +19,54 @@ body {
   margin: 0;
   min-height: 100vh;
   background: #050405;
-  color: #ff1744;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: monospace;
+  color: #ff234b;
   background-image: radial-gradient(#260610 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-size: 22px 22px;
 }
 
-.page {
+main {
   width: 100%;
-  padding: 24px 10px;
+  padding: 24px 12px;
   text-align: center;
 }
 
 h1 {
   margin: 0;
-  font-family: 'UnifrakturMaguntia', serif;
-  font-size: clamp(38px, 10vw, 88px);
-  font-weight: normal;
+  font-family: 'Pirata One', 'Times New Roman', serif;
+  font-size: clamp(42px, 10vw, 88px);
+  font-weight: 400;
   letter-spacing: 1px;
-  color: #ff244f;
+  line-height: 1.15;
+  color: #ff234b;
   text-shadow:
-    0 0 2px #ffb3c1,
-    0 0 6px #ff1744,
-    0 0 14px #e60035,
-    0 0 30px #8b001f;
-  animation: neon 3.7s infinite;
+    0 0 2px #ffb9c8,
+    0 0 7px #ff1744,
+    0 0 18px #c90030,
+    0 0 35px #690019;
+  animation: flicker 5s infinite;
 }
 
-.gif {
+img {
   display: block;
   width: 180px;
-  max-width: 70vw;
+  max-width: 75%;
   height: auto;
-  margin: 30px auto 0;
+  margin: 28px auto 0;
 }
 
-@keyframes neon {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+@keyframes flicker {
+  0%, 18%, 20%, 22%, 60%, 62%, 100% {
     opacity: 1;
-    text-shadow:
-      0 0 2px #ffb3c1,
-      0 0 6px #ff1744,
-      0 0 14px #e60035,
-      0 0 30px #8b001f;
   }
 
-  20%, 24%, 55% {
-    opacity: .72;
-    text-shadow: 0 0 3px #ff1744;
+  19%, 61% {
+    opacity: .75;
   }
 
-  56% {
+  21% {
     opacity: .9;
   }
 }
@@ -84,9 +80,9 @@ h1 {
 </head>
 
 <body>
-<main class="page">
+<main>
   <h1>BIRDS EYE VIEW</h1>
-  <img class="gif" src="gifs/deinbild.gif" alt="">
+  <img src="bild.jpg" alt="">
 </main>
 </b
   ody>
