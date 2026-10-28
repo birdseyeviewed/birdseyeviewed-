@@ -19,60 +19,87 @@ body {
   margin: 0;
   min-height: 100vh;
   background: #050405;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #ff234b;
   background-image: radial-gradient(#260610 1px, transparent 1px);
   background-size: 22px 22px;
+  font-family: Arial, sans-serif;
 }
 
 main {
   width: 100%;
-  padding: 24px 12px;
+  padding: 35px 16px 50px;
   text-align: center;
 }
 
 h1 {
-  margin: 0;
-  font-family: 'Pirata One', 'Times New Roman', serif;
-  font-size: clamp(42px, 10vw, 88px);
+  margin: 0 0 35px;
+  font-family: 'Pirata One', serif;
+  font-size: clamp(54px, 12vw, 105px);
   font-weight: 400;
-  letter-spacing: 1px;
-  line-height: 1.15;
+  line-height: 1.1;
+  letter-spacing: 2px;
   color: #ff234b;
   text-shadow:
-    0 0 2px #ffb9c8,
-    0 0 7px #ff1744,
-    0 0 18px #c90030,
-    0 0 35px #690019;
+    0 0 3px #ffb9c8,
+    0 0 10px #ff1744,
+    0 0 25px #c90030,
+    0 0 45px #690019;
   animation: flicker 5s infinite;
 }
 
 img {
   display: block;
-  width: 180px;
-  max-width: 75%;
-  height: auto;
-  margin: 28px auto 0;
+  width: min(75vw, 420px);
+  max-height: 55vh;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.soon {
+  margin-top: 28px;
+  font-size: clamp(24px, 6vw, 38px);
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: #ff234b;
+  text-shadow: 0 0 8px #c90030, 0 0 18px #690019;
+}
+
+.dot {
+  display: inline-block;
+  animation: dotBlink 1.5s infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes dotBlink {
+  0%, 20% {
+    opacity: 0.15;
+  }
+  50%, 100% {
+    opacity: 1;
+  }
 }
 
 @keyframes flicker {
   0%, 18%, 20%, 22%, 60%, 62%, 100% {
     opacity: 1;
   }
-
   19%, 61% {
-    opacity: .75;
+    opacity: 0.75;
   }
-
   21% {
-    opacity: .9;
+    opacity: 0.9;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  h1 {
+  h1, .dot {
     animation: none;
   }
 }
@@ -82,8 +109,12 @@ img {
 <body>
 <main>
   <h1>BIRDS EYE VIEW</h1>
-  <img src="bild.jpg" alt="">
+
+  <img src="bild.jpg" alt="Birds Eye View">
+
+  <div class="soon">
+    SOON<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+  </div>
 </main>
-</b
-  ody>
+</body>
 </html>
