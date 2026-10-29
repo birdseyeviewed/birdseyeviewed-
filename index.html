@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,36 +8,44 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
 <style>
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  min-height: 100vh;
   background: #050405;
   color: #ff234b;
   background-image: radial-gradient(#260610 1px, transparent 1px);
   background-size: 22px 22px;
-  font-family: Arial, sans-serif;
 }
 
-main {
+section {
   width: 100%;
-  padding: 35px 16px 50px;
   text-align: center;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 35px 16px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
   margin: 0 0 35px;
-  font-family: 'Pirata One', serif;
-  font-size: clamp(54px, 12vw, 105px);
+  font-family: 'UnifrakturMaguntia', Georgia, serif;
+  font-size: clamp(52px, 11vw, 100px);
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: 2px;
+  line-height: 1.15;
   color: #ff234b;
   text-shadow:
     0 0 3px #ffb9c8,
@@ -47,23 +55,22 @@ h1 {
   animation: flicker 5s infinite;
 }
 
-img {
+.hero img {
   display: block;
   width: min(55vw, 300px);
-  max-height: 55vh;
+  max-height: 45vh;
   object-fit: contain;
   margin: 0 auto;
 }
 
 .soon {
   margin-top: 28px;
+  font-family: Georgia, serif;
   font-size: clamp(24px, 6vw, 38px);
   font-weight: 600;
   letter-spacing: 5px;
   color: #ff234b;
-  text-shadow:
-    0 0 8px #c90030,
-    0 0 18px #690019;
+  text-shadow: 0 0 8px #c90030, 0 0 18px #690019;
 }
 
 .dot {
@@ -79,40 +86,75 @@ img {
   animation-delay: 0.5s;
 }
 
-@keyframes dotBlink {
-  0%, 20% {
-    opacity: 0.15;
-  }
+.projects {
+  min-height: 100vh;
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #260610;
+}
 
-  50%, 100% {
-    opacity: 1;
-  }
+.projects a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  color: #ff234b;
+  text-decoration: none;
+  font-family: 'UnifrakturMaguntia', Georgia, serif;
+  font-size: clamp(48px, 10vw, 76px);
+  text-shadow: 0 0 8px #a9002b, 0 0 20px #450014;
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.projects a:hover {
+  text-shadow: 0 0 12px #ff234b, 0 0 30px #c90030;
+  transform: translateY(4px);
+}
+
+.arrow {
+  font-family: Georgia, serif;
+  font-size: 35px;
+  animation: arrowDown 1.5s infinite;
+}
+
+.project-space {
+  margin-top: 100px;
+  color: #6d2436;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+}
+
+@keyframes dotBlink {
+  0%, 20% { opacity: 0.15; }
+  50%, 100% { opacity: 1; }
+}
+
+@keyframes arrowDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(9px); }
 }
 
 @keyframes flicker {
-  0%, 18%, 20%, 22%, 60%, 62%, 100% {
-    opacity: 1;
-  }
-
-  19%, 61% {
-    opacity: 0.75;
-  }
-
-  21% {
-    opacity: 0.9;
-  }
+  0%, 18%, 20%, 22%, 60%, 62%, 100% { opacity: 1; }
+  19%, 61% { opacity: 0.75; }
+  21% { opacity: 0.9; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  h1, .dot {
-    animation: none;
+  *, *::before, *::after {
+    animation: none !important;
+    scroll-behavior: auto;
   }
 }
 </style>
 </head>
 
 <body>
-<main>
+
+<section class="hero" id="top">
   <h1>BIRDS EYE VIEW</h1>
 
   <img src="bild.jpg" alt="Birds Eye View">
@@ -120,7 +162,19 @@ img {
   <div class="soon">
     SOON<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
   </div>
-</m
-  ain>
+</section>
+
+<section class="projects" id="projects">
+  <a href="#project-list">
+    <span>Projects</span>
+    <span class="arrow">↓</span>
+  </a>
+
+  <div class="project-space" id="project-list">
+    MORE TO COME
+  </div>
+  
+</section>
+
 </body>
 </html>
